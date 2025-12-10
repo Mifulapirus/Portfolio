@@ -5,18 +5,20 @@ This is a personal portfolio project showcasing various works and projects.
 ## Contents
 
 - **index.html**: Main homepage with hero section, about, projects grid, and contact.
-- **style.css**: Custom CSS for styling.
+- **style.css**: Custom CSS with modern effects, animations, and responsive design.
+- **script.js**: JavaScript for smooth scrolling, scroll-based animations, and subtle effects.
 - **images/**: Directory for project thumbnail images (add placeholder.jpg or actual images here).
 
 ## Technologies Used
 
 - HTML5
-- CSS3
+- CSS3 (with animations and transitions)
+- JavaScript (ES6+ for interactivity)
 - Bootstrap 5 for responsive design
 
 ## Usage
 
-Open `index.html` in a web browser to view the portfolio site.
+Open `index.html` in a web browser to view the portfolio site with smooth animations and effects.
 
 ## Deployment
 
