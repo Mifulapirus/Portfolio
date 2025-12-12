@@ -1,9 +1,34 @@
 /* Custom styles for Portfolio */
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+:root {
+    --bg: #ffffff;
+    --text: #222;
+    --muted: #666;
+    --primary: #6c7bff;
+    --primary-2: #7b4df1;
+    --card-bg: #fff;
+    --card-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    --tag-bg: #eef2ff;
+    --tag-text: #3f51b5;
+}
+
+.theme-dark {
+    --bg: #0f1115;
+    --text: #e6e6e6;
+    --muted: #a0a0a0;
+    --primary: #8ab4f8;
+    --primary-2: #7bb0ff;
+    --card-bg: #161922;
+    --card-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    --tag-bg: #1f2430;
+    --tag-text: #b0c7ff;
+}
+
+html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
 }
 
 .hero {
@@ -33,33 +58,46 @@ body {
 
 .navbar {
     backdrop-filter: blur(10px);
-    background-color: rgba(0, 0, 0, 0.8) !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
     transition: background-color 0.3s ease;
 }
 
-.card {
+.project-card {
     border: none;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--card-shadow);
     transition: all 0.3s ease;
     overflow: hidden;
 }
 
-.card:hover {
+.project-card:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-.card-img-top {
+.thumb {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.card:hover .card-img-top {
-    transform: scale(1.1);
+.project-card:hover .thumb img {
+    transform: scale(1.06);
 }
 
+.ratio-16x9 { aspect-ratio: 16 / 9; }
+
 .btn-primary {
-    background: linear-gradient(45deg, #667eea, #764ba2);
+    background: linear-gradient(45deg, var(--primary), var(--primary-2));
     border: none;
     border-radius: 25px;
     padding: 10px 20px;
@@ -102,3 +140,25 @@ footer {
     backdrop-filter: blur(10px);
     background-color: rgba(0, 0, 0, 0.9) !important;
 }
+
+.shape-divider svg {
+    display: block;
+    width: 100%;
+    height: 90px;
+    color: var(--bg);
+}
+
+.hero-title { letter-spacing: 0.5px; }
+.hero-sub { color: var(--muted); }
+
+.tags .tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    margin-right: 8px;
+}
+
+.section-alt { background: linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0)); }
