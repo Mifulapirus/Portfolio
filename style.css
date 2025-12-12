@@ -69,14 +69,24 @@ html, body {
 }
 
 .hero {
-    background: radial-gradient(80% 120% at 50% 0%, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 60%),
-                linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
-    min-height: 60vh;
+    background: linear-gradient(135deg, var(--primary), var(--primary-2));
+    min-height: 80vh;
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
 }
+
+.lab-scene { position: relative; width: 100%; height: 80vh; }
+.lab-scene .layer { position: absolute; inset: 0; width: 100%; height: 100%; }
+.layer-back { transform: translateZ(0); }
+.layer-mid { transform: translateZ(0); }
+.layer-front { transform: translateZ(0); }
+.scene-overlay { position: absolute; left: 0; right: 0; top: 20px; }
+
+.hotspot { transition: transform 0.2s ease, filter 0.2s ease; }
+.hotspot:hover { transform: translateY(-3px); filter: brightness(1.1); }
+.hotspot:focus { outline: 2px dashed var(--primary); outline-offset: 4px; }
 
 .hero::before {
     content: '';

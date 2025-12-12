@@ -37,12 +37,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Subtle parallax effect for hero
+    const back = document.querySelector('.layer-back');
+    const mid = document.querySelector('.layer-mid');
+    const front = document.querySelector('.layer-front');
     window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            hero.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
-        }
+        if (back) back.style.transform = `translateY(${scrolled * 0.05}px)`;
+        if (mid) mid.style.transform = `translateY(${scrolled * 0.1}px)`;
+        if (front) front.style.transform = `translateY(${scrolled * 0.15}px)`;
     });
 
     // Typing effect for hero text (optional, subtle)
@@ -76,4 +78,18 @@ document.addEventListener('DOMContentLoaded', function() {
             idx++;
         });
     }
+
+    // Hotspot navigation: map lab instruments to projects section filters
+    document.querySelectorAll('.hotspot').forEach(h => {
+        h.addEventListener('click', () => {
+            const proj = h.getAttribute('data-project');
+            document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+            // future: apply filtering by project tag/name
+        });
+        h.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                h.click();
+            }
+        });
+    });
 });
