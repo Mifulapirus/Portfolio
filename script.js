@@ -60,4 +60,20 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         setTimeout(typeWriter, 500);
     }
+
+    // Theme cycling
+    const palettes = ['theme-dark', 'theme-sunset', 'theme-forest', 'theme-ocean'];
+    let idx = 0;
+    const toggle = document.getElementById('themeToggle');
+    if (toggle) {
+        toggle.addEventListener('click', () => {
+            // remove existing palette classes
+            palettes.forEach(p => document.documentElement.classList.remove(p));
+            // apply next palette
+            const next = palettes[idx % palettes.length];
+            document.documentElement.classList.add(next);
+            toggle.textContent = next.replace('theme-', '').replace(/\b\w/g, c => c.toUpperCase()) + ' Mode';
+            idx++;
+        });
+    }
 });

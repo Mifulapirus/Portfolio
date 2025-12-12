@@ -1,11 +1,11 @@
 /* Custom styles for Portfolio */
 
 :root {
-    --bg: #ffffff;
-    --text: #222;
-    --muted: #666;
-    --primary: #6c7bff;
-    --primary-2: #7b4df1;
+    --bg: #0f141b;
+    --text: #e9eff6;
+    --muted: #9fb0c4;
+    --primary: #3ac3ff;
+    --primary-2: #7a77ff;
     --card-bg: #fff;
     --card-shadow: 0 4px 15px rgba(0,0,0,0.1);
     --tag-bg: #eef2ff;
@@ -13,15 +13,52 @@
 }
 
 .theme-dark {
-    --bg: #0f1115;
-    --text: #e6e6e6;
-    --muted: #a0a0a0;
-    --primary: #8ab4f8;
-    --primary-2: #7bb0ff;
-    --card-bg: #161922;
+    --bg: #0a0d12;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --primary: #60a5fa;
+    --primary-2: #a78bfa;
+    --card-bg: #111827;
     --card-shadow: 0 6px 20px rgba(0,0,0,0.35);
     --tag-bg: #1f2430;
     --tag-text: #b0c7ff;
+}
+
+/* Additional palettes */
+.theme-sunset {
+    --bg: #161316;
+    --text: #fff7f3;
+    --muted: #f3d9c8;
+    --primary: #ff7a59; /* coral */
+    --primary-2: #ffc15e; /* warm yellow */
+    --card-bg: #201b20;
+    --card-shadow: 0 6px 22px rgba(255, 122, 89, 0.18);
+    --tag-bg: #2a232a;
+    --tag-text: #ffd7c6;
+}
+
+.theme-forest {
+    --bg: #0e1411;
+    --text: #e7f5e9;
+    --muted: #b7d2bf;
+    --primary: #36c48d; /* emerald */
+    --primary-2: #3fa06e; /* moss */
+    --card-bg: #132018;
+    --card-shadow: 0 6px 22px rgba(54, 196, 141, 0.18);
+    --tag-bg: #1a2a20;
+    --tag-text: #a6e8c7;
+}
+
+.theme-ocean {
+    --bg: #0b1220;
+    --text: #e6f0ff;
+    --muted: #b8c7e6;
+    --primary: #00d4ff;
+    --primary-2: #4b74ff;
+    --card-bg: #0e172a;
+    --card-shadow: 0 6px 22px rgba(75, 116, 255, 0.18);
+    --tag-bg: #12203a;
+    --tag-text: #b0d3ff;
 }
 
 html, body {
@@ -32,7 +69,8 @@ html, body {
 }
 
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: radial-gradient(80% 120% at 50% 0%, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 60%),
+                linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
     min-height: 60vh;
     display: flex;
     align-items: center;
@@ -97,7 +135,7 @@ html, body {
 .ratio-16x9 { aspect-ratio: 16 / 9; }
 
 .btn-primary {
-    background: linear-gradient(45deg, var(--primary), var(--primary-2));
+    background: linear-gradient(135deg, var(--primary), var(--primary-2));
     border: none;
     border-radius: 25px;
     padding: 10px 20px;
@@ -162,3 +200,17 @@ footer {
 }
 
 .section-alt { background: linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0)); }
+
+/* Color accents across sections */
+.section-alt {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+}
+
+.nav-link, .navbar-brand { color: var(--text) !important; }
+.btn-outline-light {
+    color: var(--text);
+    border-color: rgba(255,255,255,0.5);
+}
+.btn-outline-light:hover {
+    background: rgba(255,255,255,0.1);
+}
