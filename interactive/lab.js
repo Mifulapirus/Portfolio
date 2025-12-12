@@ -242,7 +242,10 @@ window.addEventListener('keyup', (e) => {
 
 // Modal functions
 function closeModal() {
-    document.getElementById('project-modal').classList.remove('active');
+    const modal = document.getElementById('project-modal');
+    if (modal) {
+        modal.classList.remove('active');
+    }
     lookingUp = false;
 }
 
@@ -361,8 +364,24 @@ window.addEventListener('resize', () => {
 // Hide loading screen
 document.getElementById('loading').style.display = 'none';
 
-// Add event listener for close button
-document.getElementById('close-modal-btn').addEventListener('click', closeModal);
+// Setup close button listener with error handling
+const closeBtn = document.getElementById('close-modal-btn');
+if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+        console.log('Close button clicked');
+        closeModal();
+    });
+    console.log('Close button listener attached');
+} else {
+    console.error('Close button not found!');
+}
+
+// Also allow ESC key to close
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
 
 // Start animation
 animate();
