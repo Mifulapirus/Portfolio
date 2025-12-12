@@ -246,9 +246,6 @@ function closeModal() {
     lookingUp = false;
 }
 
-// Add event listener for close button
-document.getElementById('close-modal-btn').addEventListener('click', closeModal);
-
 function showProject(project) {
     document.getElementById('modal-title').textContent = project.name;
     document.getElementById('modal-description').textContent = project.description;
@@ -363,6 +360,9 @@ window.addEventListener('resize', () => {
 
 // Hide loading screen
 document.getElementById('loading').style.display = 'none';
+
+// Add event listener for close button
+document.getElementById('close-modal-btn').addEventListener('click', closeModal);
 
 // Start animation
 animate();
