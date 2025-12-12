@@ -244,7 +244,9 @@ window.addEventListener('keyup', (e) => {
 function closeModal() {
     const modal = document.getElementById('project-modal');
     if (modal) {
+        console.log('Removing active class, current classes:', modal.className);
         modal.classList.remove('active');
+        console.log('After removal, classes:', modal.className);
     }
     lookingUp = false;
 }

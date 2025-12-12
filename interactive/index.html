@@ -57,9 +57,13 @@
             width: 90%;
             transition: transform 0.3s ease;
             z-index: 100;
+            pointer-events: none;
+            opacity: 0;
         }
         #project-modal.active {
             transform: translate(-50%, -50%) scale(1);
+            pointer-events: auto;
+            opacity: 1;
         }
         #project-modal h2 {
             color: #60a5fa;
