@@ -241,10 +241,13 @@ window.addEventListener('keyup', (e) => {
 });
 
 // Modal functions
-window.closeModal = function() {
+function closeModal() {
     document.getElementById('project-modal').classList.remove('active');
     lookingUp = false;
-};
+}
+
+// Add event listener for close button
+document.getElementById('close-modal-btn').addEventListener('click', closeModal);
 
 function showProject(project) {
     document.getElementById('modal-title').textContent = project.name;
