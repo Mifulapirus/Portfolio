@@ -231,6 +231,7 @@ const speed = 0.1;
 let walkAnimation = 0;
 let isWalking = false;
 let lookingUp = false;
+let activeProject = null;
 
 window.addEventListener('keydown', (e) => {
     keys[e.key.toLowerCase()] = true;
@@ -264,6 +265,7 @@ function showProject(project) {
     });
     document.getElementById('project-modal').classList.add('active');
     lookingUp = true;
+    activeProject = project.name;
 }
 
 // Animation loop
@@ -342,9 +344,14 @@ function animate() {
         station.display.rotation.y += 0.01;
         station.display.position.y = 2 + Math.sin(Date.now() * 0.001) * 0.1;
         
-        if (distance < 2.5 && !lookingUp) {
-            // Trigger project view
+        // Open only if close AND not already viewing this project
+        if (distance < 2.5 && !lookingUp && activeProject !== station.project.name) {
             showProject(station.project);
+        }
+
+        // Reset active project when the player walks away
+        if (distance > 3 && activeProject === station.project.name) {
+            activeProject = null;
         }
     });
     
