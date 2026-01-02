@@ -26,6 +26,30 @@
                         <button id="themeToggle" class="btn btn-sm btn-outline-light rounded-pill">Dark Mode</button>
                     </li>
                 </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hero" class="hero text-white text-center d-flex align-items-center" style="min-height: 50vh;">
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="eyebrow">Curated builds</p>
+                    <h1 class="display-4 fw-bold hero-title">Projects that balance code, hardware, and clarity.</h1>
+                    <p class="hero-sub fs-5">Snapshots of firmware, automation, and interactive systems—all optimized for longevity and polish.</p>
+                    <div class="mt-4">
+                        <a href="#projects" class="btn btn-primary btn-lg">Browse projects</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="projects" class="py-5 section-alt">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="section-title mb-0">Featured projects</h2>
+                <span class="text-muted">static snapshots · more work in repo list</span>
+            </div>
             <div class="row g-4">
                 <div class="col-md-4 mb-4">
                     <div class="card project-card h-100">
@@ -37,7 +61,7 @@
                             <p class="card-text">Track what you spend your time on by turning the dice.</p>
                             <div class="tags mb-3">
                                 <span class="tag">Arduino</span>
-                                <span class="tag">Quantified Self</span>
+                                <span class="tag">Product</span>
                             </div>
                             <a href="#" class="btn btn-primary">Learn More</a>
                         </div>
@@ -78,11 +102,27 @@
                 <div class="col-md-4 mb-4">
                     <div class="card project-card h-100">
                         <div class="thumb ratio-16x9">
+                            <img src="images/placeholder.jpg" alt="PawTracker">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">PawTracker</h5>
+                            <p class="card-text">LoRa GPS tracker with real-time location dashboards for dogs.</p>
+                            <div class="tags mb-3">
+                                <span class="tag">LoRa</span>
+                                <span class="tag">Embedded</span>
+                            </div>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card h-100">
+                        <div class="thumb ratio-16x9">
                             <img src="images/placeholder.jpg" alt="Noter">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Noter</h5>
-                            <p class="card-text">GPU-accelerated transcription manager with diarization and AI-assisted notes.</p>
+                            <p class="card-text">AI transcription manager with Whisper and local LLM responses.</p>
                             <div class="tags mb-3">
                                 <span class="tag">Python</span>
                                 <span class="tag">Whisper</span>
@@ -94,14 +134,14 @@
                 <div class="col-md-4 mb-4">
                     <div class="card project-card h-100">
                         <div class="thumb ratio-16x9">
-                            <img src="images/placeholder.jpg" alt="OSCall">
+                            <img src="images/placeholder.jpg" alt="OSC All">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">OSCall</h5>
-                            <p class="card-text">Collection of OSC-powered devices with captive portal onboarding and Open Stage Control flows.</p>
+                            <h5 class="card-title">OSC All</h5>
+                            <p class="card-text">OSC device ensemble that self-hosts APs and bridges Open Stage Control.</p>
                             <div class="tags mb-3">
-                                <span class="tag">Open Stage Control</span>
-                                <span class="tag">ESP</span>
+                                <span class="tag">OSC</span>
+                                <span class="tag">Automation</span>
                             </div>
                             <a href="#" class="btn btn-primary">Learn More</a>
                         </div>
@@ -110,22 +150,14 @@
                 <div class="col-md-4 mb-4">
                     <div class="card project-card h-100">
                         <div class="thumb ratio-16x9">
-                            <img src="images/placeholder.jpg" alt="PawTracker">
+                            <img src="images/placeholder.jpg" alt="Meeting Notes">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">PawTracker</h5>
-                            <p class="card-text">LoRa-based GPS tracking for pups with web dashboard and remote controls.</p>
+                            <h5 class="card-title">Meeting Notes</h5>
+                            <p class="card-text">Speaker diarization suite combining Whisper, NeMo, and alignments.</p>
                             <div class="tags mb-3">
-                                <span class="tag">LoRa</span>
-                                <span class="tag">Vue?</span>
-                            </div>
-                            <a href="#" class="btn btn-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                                <span class="tag">C++</span>
-                                <span class="tag">ESP32</span>
+                                <span class="tag">NeMo</span>
+                                <span class="tag">AI</span>
                             </div>
                             <a href="#" class="btn btn-primary">Learn More</a>
                         </div>
@@ -134,14 +166,14 @@
                 <div class="col-md-4 mb-4">
                     <div class="card project-card h-100">
                         <div class="thumb ratio-16x9">
-                            <img src="images/placeholder.jpg" alt="CSA">
+                            <img src="images/placeholder.jpg" alt="UPS Scraper">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">CSA</h5>
-                            <p class="card-text">Canine Stick Authority - Stïk Registry Platform.</p>
+                            <h5 class="card-title">UPS Scraper</h5>
+                            <p class="card-text">Selenium automation that enriches UPS shipment exports.</p>
                             <div class="tags mb-3">
-                                <span class="tag">Full-stack</span>
-                                <span class="tag">MongoDB</span>
+                                <span class="tag">Selenium</span>
+                                <span class="tag">Python</span>
                             </div>
                             <a href="#" class="btn btn-primary">Learn More</a>
                         </div>
