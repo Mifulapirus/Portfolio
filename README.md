@@ -1,25 +1,20 @@
 # Portfolio
 
-A projects-first portfolio site with a modern grid for showcasing systems, tools, and experiments.
+This repository now maintains two portfolio surfaces:
 
-## Contents
+- The original, styled landing page at the repo root (`index.html`, `style.css`, `script.js`).
+- The clean, data-driven project catalog under `V0/`—a searchable grid that lists every known project.
 
-- **index.html**: Hero + project grid layout focused on capturing project thumbnails and context.
-- **style.css**: Custom CSS with modern effects, animations, and responsive design.
-- **script.js**: JavaScript for smooth scrolling, scroll-based animations, and subtle effects.
-- **images/**: Directory for project thumbnail images (add placeholder.jpg or actual images here).
+## V0 Project Library
 
-## Technologies Used
+- **V0/index.html**: Minimal hero and searchable grid focused solely on the project catalog.
+- **V0/style.css**: Dark, modern card layout supporting responsive grids and filters.
+- **V0/projects.js**: Canonical list of projects (name, description, stack, tags) powering the grid.
+- **V0/main.js**: Module that renders cards and wires the search + status filters.
+- **V0/README.md**: Notes on running and extending the V0 site.
 
-- HTML5
-- CSS3 (with animations and transitions)
-- JavaScript (ES6+ for interactivity)
-- Bootstrap 5 for responsive design
+## Legacy Site (root)
 
-## Usage
-
-Open `index.html` in a web browser to view the portfolio site with smooth animations and effects.
-
-## Deployment
-
-Host on a web server or deploy to GitHub Pages. Add project images to the `images/` folder and update the src attributes in index.html.
+- **index.html**: Original hero + project-cards layout (still available for reference).
+- **style.css** / **script.js**: Styling and JS for that earlier version.
+- **images/**: Placeholder assets referenced by the legacy grid.
