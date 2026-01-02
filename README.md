@@ -1,10 +1,10 @@
 # Portfolio
 
-This is a personal portfolio project showcasing various works and projects.
+A projects-first portfolio site with a modern grid for showcasing systems, tools, and experiments.
 
 ## Contents
 
-- **index.html**: Main homepage with hero section, about, projects grid, and contact.
+- **index.html**: Hero + project grid layout focused on capturing project thumbnails and context.
 - **style.css**: Custom CSS with modern effects, animations, and responsive design.
 - **script.js**: JavaScript for smooth scrolling, scroll-based animations, and subtle effects.
 - **images/**: Directory for project thumbnail images (add placeholder.jpg or actual images here).
