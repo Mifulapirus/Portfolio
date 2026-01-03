@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angel's Catalog</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <div class="logo">
+                <span class="logo-mark">A</span>
+                <div>
+                    <strong>Angel's Catalog</strong>
+                    <small>Systems, sense, &amp; community</small>
+                </div>
+            </div>
+            <nav>
+                <a href="#projects">Projects</a>
+                <a href="#hero">About</a>
+            </nav>
+        </header>
+
+        <header class="hero" id="hero">
+            <p class="hero-kicker">Independent Maker &amp; Systems Architect</p>
+            <h1>Projects, tools, and experiments mapped chronologically.</h1>
+            <p>Building across firmware, product, and community tools since 2012. This catalog foregrounds structure, status,
+                and the smallest possible launch details so you can quickly understand what is active and what shaped the
+                roadmap.</p>
+            <button type="button" id="ctaScroll">See the latest work</button>
+        </header>
+
+        <section class="projects" id="projects">
+            <div class="section-head">
+                <div>
+                    <h2>Portfolio by intent</h2>
+                    <p>Filter by current focus to find every stack, system, and story.</p>
+                </div>
+                <div class="project-count" id="projectCount"></div>
+            </div>
+            <div class="filter-controls" id="filterControls"></div>
+            <div id="projectGrid"></div>
+        </section>
+
+        <footer>
+            Crafted with purpose in Minneapolis · curated continuously by Angel
+        </footer>
+    </div>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
