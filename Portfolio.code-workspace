@@ -137,6 +137,9 @@
 		},
 		{
 			"path": "../YalosInstruments"
+		},
+		{
+			"path": "../LaserCat"
 		}
 	],
 	"settings": {}
