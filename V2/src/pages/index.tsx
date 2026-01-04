@@ -29,7 +29,7 @@ export default function Home({ projects }: HomeProps) {
   return (
     <>
       <Head>
-        <title>HomeLab</title>
+        <title>The HomeLab</title>
         <meta name="description" content="Portfolio showcasing projects across hardware and software development" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -40,11 +40,11 @@ export default function Home({ projects }: HomeProps) {
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
             <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              HomeLab
+              The HomeLab
             </span>
           </h1>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-8">
-            Lots of projects... mostly working, definitely made by me.
+            It's not an office, It's a Lab!
           </p>
           
           {/* Compact Type Filter */}

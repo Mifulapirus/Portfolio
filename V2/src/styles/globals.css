@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Reserve scrollbar gutter to prevent layout shift when scrollbars appear */
+html {
+  scrollbar-gutter: stable;
+}
+
+/* Fallback for browsers without scrollbar-gutter support */
+@supports not (scrollbar-gutter: stable) {
+  html {
+    overflow-y: scroll; /* reserve vertical scrollbar space */
+  }
+}
+
 @layer base {
   body {
     @apply bg-dark text-white;

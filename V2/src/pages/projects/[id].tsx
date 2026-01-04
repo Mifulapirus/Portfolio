@@ -1,7 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { fallbackProjects } from '@/data/projects';
 import { getProjectContent, getAllProjects, ProjectContent } from '@/lib/markdown';
 
 interface ProjectPageProps {

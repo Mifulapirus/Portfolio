@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
-import { Project, fallbackProjects } from '@/data/projects';
+import { Project } from '@/data/projects';
 
 const projectsDirectory = path.join(process.cwd(), 'content/projects');
 
@@ -27,42 +27,45 @@ export interface ProjectContent {
 export function getAllProjects(): Project[] {
   // Check if directory exists
   if (!fs.existsSync(projectsDirectory)) {
-    return fallbackProjects;
+    console.warn('Projects directory not found:', projectsDirectory);
+    return [];
   }
 
   try {
     const fileNames = fs.readdirSync(projectsDirectory);
-    const markdownProjects: Project[] = [];
+    const projects: Project[] = [];
 
     fileNames.forEach(fileName => {
       if (!fileName.endsWith('.md')) return;
 
-      const fullPath = path.join(projectsDirectory, fileName);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const { data } = matter(fileContents);
+      try {
+        const fullPath = path.join(projectsDirectory, fileName);
+        const fileContents = fs.readFileSync(fullPath, 'utf8');
+        const { data } = matter(fileContents);
 
-      if (data.id && data.title) {
-        markdownProjects.push({
-          id: data.id,
-          name: data.title,
-          description: data.description || '',
-          technologies: data.technologies || [],
-          types: data.types || [],
-          topics: data.topics || [],
-          imageUrl: data.imageUrl || `https://via.placeholder.com/400x300/667eea/ffffff?text=${encodeURIComponent(data.title)}`
-        });
+        // Require complete frontmatter
+        if (data.id && data.title) {
+          projects.push({
+            id: data.id,
+            name: data.title,
+            description: data.description || '',
+            technologies: data.technologies || [],
+            types: data.types || [],
+            topics: data.topics || [],
+            imageUrl: data.imageUrl || `https://via.placeholder.com/400x300/667eea/ffffff?text=${encodeURIComponent(data.title)}`
+          });
+        } else {
+          console.warn(`Skipping ${fileName}: missing id or title in frontmatter`);
+        }
+      } catch (fileError) {
+        console.error(`Error reading ${fileName}:`, fileError);
       }
     });
 
-    // Merge markdown projects with fallback projects
-    // Markdown projects take priority
-    const markdownIds = new Set(markdownProjects.map(p => p.id));
-    const remainingFallbacks = fallbackProjects.filter(p => !markdownIds.has(p.id));
-    
-    return [...markdownProjects, ...remainingFallbacks];
+    return projects;
   } catch (error) {
     console.error('Error loading projects from markdown:', error);
-    return fallbackProjects;
+    return [];
   }
 }
 
